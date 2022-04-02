@@ -41,7 +41,15 @@ function updateOutput() {
 
 function onSubmit(event) {
   event.preventDefault();
-  console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
+
+  const { email, message } =  event.currentTarget.elements
+  if (email.value === "" || message.value === "") {
+    alert("Please fill in all the fields below");
+  }
+  else {
+    console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
+  }
+
   formRef.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
 }
