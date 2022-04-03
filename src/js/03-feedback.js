@@ -44,7 +44,7 @@ function onSubmit(event) {
 
   const { email, message } =  event.currentTarget.elements
   if (email.value === "" || message.value === "") {
-    alert("Please fill in all the fields below");
+   return alert("Please fill in all the fields below");
   }
   else {
     console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
