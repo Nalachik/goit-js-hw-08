@@ -25,8 +25,8 @@ updateOutput();
 
 function onInputMessage(event) {
   const feedbackUser = {
-    email: event.currentTarget.elements.email.value,
-    message: event.currentTarget.elements.message.value,
+    email: inputRef.value,
+    message: textareaRef.value,
   };
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(feedbackUser));
 }
@@ -42,9 +42,9 @@ function updateOutput() {
 function onSubmit(event) {
   event.preventDefault();
 
-  const { email, message } =  event.currentTarget.elements
+  const { email, message } = event.currentTarget.elements
   if (email.value === "" || message.value === "") {
-   return alert("Please fill in all the fields below");
+    return alert("Please fill in all the fields below");
   }
   else {
     console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
